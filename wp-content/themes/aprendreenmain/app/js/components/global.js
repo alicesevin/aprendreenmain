@@ -1,8 +1,6 @@
-var $ = require('jquery');
-
 module.exports = function () {
 
-    $(document).ready(function () {
+    document.addEventListener("DOMContentLoaded", function () {
         initApp();
     });
 

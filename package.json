@@ -1,7 +1,7 @@
 {
   "name": "aprendreenmain",
   "version": "0.0.1",
-  "description": "A prendre en main ===",
+  "description": "",
   "private": true,
   "repository": {
     "type": "git",
@@ -9,7 +9,7 @@
   },
   "author": "Hetic",
   "license": "ISC",
-  "homepage": "http://aprendreenmain.dev/",
+  "homepage": "https://github.com/alicesevin/aprendreenmain#readme",
   "devDependencies": {
     "browserify": "^13.1.1",
     "event-stream": "^3.3.4",
