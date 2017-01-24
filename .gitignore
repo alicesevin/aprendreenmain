@@ -1,0 +1,7 @@
+.idea/
+.htaccess
+.DS_Store
+wp-config.php
+wp-content/uploads/
+node_modules/
+*.map
