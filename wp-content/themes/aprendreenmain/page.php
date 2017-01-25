@@ -8,7 +8,6 @@ $res = json_decode($request["body"]);
 $require = $res->goal;
 // set price committed
 $total = $res->committed;
-
 ?>
     <div class="main">
         <?php $parallaxs = get_terms(array(
