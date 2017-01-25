@@ -2,6 +2,10 @@
   #{nth($font, 1)} {
     @include rem(font-size, nth($font, 2));
     font-weight: nth($font, 3);
+    margin: 0;
+    @if(nth($font, 4) != '-'){
+      text-transform: nth($font, 4);
+    }
   }
 
 }
