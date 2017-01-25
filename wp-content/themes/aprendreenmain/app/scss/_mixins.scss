@@ -17,22 +17,6 @@ PX TO REM
   #{$property}: $rem $content;
 }
 
-@mixin rem($property, $values,$content : null) {
-  $max: length($values);
-  $rem: ();
-
-  @each $value in $values {
-    @if $value == 0 or $value == auto {
-      $rem: append($rem, $value);
-    } @else {
-      $unit: unit($value);
-      $val: parseInt($value);
-      $rem: append($rem, ($val / 10 + rem))
-    }
-  }
-  #{$property}: $rem $content;
-}
-
 /*********************
 TRANSITION
 *********************/
@@ -74,90 +58,92 @@ BOX-SZING
 
 // Multiplicateur/sm/xs
 $indexes: (
-                (-20, 0, 4),
-                (-10, 0, 7),
-                (-8, 0, 13),
-                (-4, 5, 18),
-                (-1, 0, 15),
-                (2, -10, 13),
-                (0, 2, 25),
-                (3, -4, 12)
+                (-20, 0, 4, 24),
+                (-10, 0, 7, 22),
+                (-8, 0, 13, 18),
+                (-4, 5, 18, 14),
+                (-1, 0, 15, 10),
+                (1, -10, 13, 8),
+                (2, 2, 25, 4),
+                (3, -4, 12, 3)
 );
 
 @mixin plx-colors($colors) {
   @each $color in $colors {
     $index: abs(index($colors, $color));
-    $max-width: 50*9/$index;
+    $max-width: 600/$index;
     $min-width: 50/20*$index;
     $list: nth($indexes, abs($index));
     $sm: nth($list, 2);
     $xs: nth($list, 3);
+    $arbre: nth($list, 4);
     $top: ($index*10) - ( $index * nth($list, 1) );
-
-    @if ($max-width>100) {
-      $max-width: 100;
+    $time: (($index/2)*1.5)+2;
+    @if ($index>=3) {
+      $time: $time - 2;
     }
 
     //Hauteur des fonds
 
     .plx-z-#{$index} {
-      top: percentage($top/100);
+      bottom: percentage((($index*10)-17)/100);
       fill: #{$color};
       z-index: #{$index};
       max-width: percentage($max-width/100);
       min-width: percentage($min-width/100);
       @if ($sm != 0) {
         @media screen and (max-width: $sm-max) {
-          top: percentage(($top - $sm)/100);
+          bottom: percentage(($top - $sm)/100);
         }
       }
       @if ($xs != 0) {
         @media screen and (max-width: $xs-max) {
-          top: percentage(($top - $xs)/100);
+          bottom: percentage(($top - $xs)/100);
         }
       }
       &.arbre {
-        $coefficient:0;
-        @if ($index>4) {
-          $coefficient: ($max-width - 20);
-        } @else {
-          $coefficient: ($min-width + 5);
+        /*transition: left #{$time}s ease-in-out 1s;*/
+        bottom: percentage((($index*nth($list, 4))-17)/100);
+        @media screen and (max-width: $md-max) {
+          bottom: percentage((($index*nth($list, 4))-(nth($list, 4)/$index)-17)/100);
         }
-        $arbre-top: (($index*10) - ( $index * nth($list, 1) )) - $coefficient;
-        top: percentage($arbre-top/100);
-        @if ($sm != 0) {
-          @if ($index<=4) {
-            $arbre-top: $arbre-top + $index;
-          }
-          @media screen and (max-width: $sm-max) {
-            top: percentage(($arbre-top - $sm)/100);
-          }
+        @media screen and (max-width: $sm-max) {
+          bottom: percentage((($index*nth($list, 4))-(nth($list, 4)/$index)-21)/100);
         }
-        @if ($xs != 0) {
-
-          @if ($index<=4) {
-            $arbre-top: $arbre-top - (($index*10)/1.5);
-          }
-          @media screen and (max-width: $xs-max) {
-            top: percentage(($arbre-top + $xs)/100);
-          }
+        @media screen and (max-width: $xs-max) {
+          bottom: percentage((($index*nth($list, 4))-(nth($list, 4)/$index)-27)/100);
+        }
+        @media screen and (max-width: $xxs-max) {
+          bottom: percentage((($index*nth($list, 4))-(nth($list, 4)/$index)-29)/100);
         }
       }
       &.fond {
-        $fond-top: $top;
-
-        top: percentage($fond-top/100);
-        @if ($sm != 0) {
-          @media screen and (max-width: $sm-max) {
-            top: percentage(($fond-top - $sm) /100);
-          }
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        @media screen and (max-width: $md-max) {
+          width: 125%;
         }
-        @if ($xs != 0) {
-          @media screen and (max-width: $xs-max) {
-            top: percentage(($fond-top - $xs) /100);
-          }
+        @media screen and (max-width: $sm-max) {
+          width: 150%;
+        }
+        @media screen and (max-width: $xxs-max) {
+          width: 175%;
+        }
+        @media screen and (max-width: $xxs-max) {
+          width: 200%;
         }
         max-width: none;
+        /*transition: all #{$time}s;*/
+        opacity: 1;
+        // &.start {
+        //   @if ($index>=3) {
+        //     bottom: -100%;
+        //   } @else {
+        //     opacity: 0;
+        //   }
+        // }
       }
     }
   }

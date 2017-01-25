@@ -1,1 +1,26 @@
-!function n(r,t,e){function o(i,f){if(!t[i]){if(!r[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var s=t[i]={exports:{}};r[i][0].call(s.exports,function(n){var t=r[i][1][n];return o(t?t:n)},s,s.exports,n,r,t,e)}return t[i].exports}for(var u="function"==typeof require&&require,i=0;i<e.length;i++)o(e[i]);return o}({1:[function(n,r,t){r.exports=function(){function n(){var n=document.querySelectorAll(".start");setTimeout(function(){for(var r=0;r<n.length;++r)n[r].classList.remove("start")},500)}document.addEventListener("DOMContentLoaded",function(){n()})}},{}],2:[function(n,r,t){var e=n("./components/global");e()},{"./components/global":1}]},{},[2]);
+(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+module.exports = function () {
+
+    document.addEventListener("DOMContentLoaded", function () {
+        initApp();
+    });
+
+    function initApp() {
+        var $start = document.querySelectorAll('.start');
+        setTimeout(function(){
+            for (var i = 0; i < $start.length; ++i) {
+                $start[i].classList.remove("start");
+            }
+        }, 500);
+    }
+};
+
+},{}],2:[function(require,module,exports){
+// Require des composants
+var appGlobal = require('./components/global');
+
+// Initialisation des globaux
+appGlobal();
+},{"./components/global":1}]},{},[2])
+
+//# sourceMappingURL=main.js.map
