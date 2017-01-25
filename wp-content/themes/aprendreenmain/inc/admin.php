@@ -141,9 +141,29 @@ function order_column_sections($column_name)
         echo $order;
     }
 }
+function index_column($defaults)
+{
+    $defaults['order_index'] = 'Profondeur';
+    return $defaults;
+}
 
-add_filter('manage_edit-sections_sortable_columns', 'order_column_sections_sortable');
-add_filter('manage_sections_posts_columns', 'order_column');
-add_action('manage_sections_posts_custom_column', 'order_column_sections', 10, 2);
+function index_column_parallax_sortable($columns)
+{
+    $columns['order_index'] = 'order_index';
+    return $columns;
+}
+
+function index_column_parallax($column_name)
+{
+    global $post;
+
+    if ($column_name == 'order_index') {
+        $order = intval(get_field('plx-z',$post));
+        echo $order;
+    }
+}
+add_filter('manage_edit-parallax_sortable_columns', 'index_column_parallax_sortable');
+add_filter('manage_parallax_posts_columns', 'index_column');
+add_action('manage_parallax_posts_custom_column', 'index_column_parallax', 10, 2);
 
 ?>
