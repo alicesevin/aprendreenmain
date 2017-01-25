@@ -33,10 +33,10 @@ $actualLeft: 0;
       &.plx-x-#{$i} {
         left: percentage($i/100);
         &:not(.fond) {
-          &.start {
+          /*&.start {
             left: $left;
             transform: translateX($left);
-          }
+          }*/
         }
         @media screen and (max-width: $sm-max) {
           @if $i <0 {
