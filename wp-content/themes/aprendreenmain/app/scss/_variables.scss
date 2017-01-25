@@ -1,16 +1,19 @@
 // Fonts
 $browser-context: 16;
-$font-primary: 'Open sans', sans-serif;
+$font-primary: 'Source Sans Pro';
 $font-blanc: #ffffff;
 $font-noir: #000000;
+$regular : 400;
+$semibold : 500;
+$bold : 600;
 $font-styles: (
-        h1 32px 100,
-        h2 28px 100,
-        h3 24px 300,
-        h4 20px 300,
-        h5 18px 400,
-        h6 16px 400,
-        p 14px 400
+        h1 32px $semibold uppercase,
+        h2 28px $semibold uppercase,
+        h3 24px $semibold uppercase,
+        h4 20px $semibold uppercase,
+        h5 18px $regular uppercase,
+        h6 16px $regular uppercase,
+        p 15px $regular '-'
 );
 
 // Breakpoints
@@ -26,6 +29,16 @@ $lg-min: 1200px;
 //ELEMENTS DU PARALLAX
 $left: 0;
 $transition: 0;
+$cartel-plx: (
+        25px,
+        #d5d5d5,
+        #acacac,
+        #818181,
+        #727272,
+        #424242,
+        #2d2d2d,
+        #0d0d0d,
+);
 $section2-color: (
         #f1f1f1,
         #d5d5d5,
@@ -37,12 +50,12 @@ $section2-color: (
         #0d0d0d,
 );
 $section1-color: (
-        #fffede,
-        #d5c784,
-        #ac8f4c,
-        #816f2f,
-        #725b2d,
-        #42361f,
-        #362e15,
-        #272106,
+        #E08F4B,
+        #EAC497,
+        #a73d24,
+        #9B3522,
+        #7D261F,
+        #481114,
+        #2C0205,
+        #0d0d0d,
 );

@@ -22,6 +22,7 @@ $total = $res->committed;
                         'post_type' => 'parallax',
                         'post_status' => 'publish',
                         'post_per_page' => -1,
+                        'nopaging' => true,
                         'tax_query' => array(
                             array(
                                 'taxonomy' => 'section_parallax',
@@ -32,11 +33,12 @@ $total = $res->committed;
                     );
                     $elements = new WP_Query($args);
                     if ($elements->have_posts()) :?>
-                        <div id="<?php echo $parallax ?>" class="plx-section<?php echo ' '.$parallax ?>">
+                        <div id="<?php echo $parallax ?>" class="plx-section<?php echo ' ' . $parallax ?>">
                             <?php while ($elements->have_posts()) : $elements->the_post();
                                 $id = (get_field('id')) ? ' id="' . get_field('id') . '" ' : '';
                                 $isSvg = get_field('declare_svg');
                                 $element = get_field('element');
+                                $id = (get_field('id')) ? 'id="' . get_field('id') . '" ' : '';
                                 if ($isSvg) {
                                     $element = array();
                                     if (get_field('svg')) $element['svg'] = get_field('svg');
@@ -52,15 +54,23 @@ $total = $res->committed;
                                 $classes .= '" ';
                                 $title = get_the_title();
                                 if (!$isSvg && $element && !is_array($element)) : ?>
-                                    <img <?php echo $classes; ?> src="<?php echo $element; ?>"
-                                                                 alt="<?php echo $title; ?>">
+                                    <img <?php echo $classes . $id; ?> src="<?php echo $element; ?>"
+                                                                       alt="<?php echo $title; ?>">
                                 <?php elseif ($isSvg && $element && is_array($element) && (count($element) == 2)) :
                                     $path_classes = (get_field('path_classes')) ? 'class="' . get_field('path_classes') . '" ' : ''; ?>
                                     <svg <?php echo $classes.$id; ?>xmlns="http://www.w3.org/2000/svg"
                                          viewBox="<?php echo $element['viewbox']; ?>">
                                         <title><?php echo $title; ?></title>
-                                        <path <?php echo $path_classes; ?>d="<?php echo $element['svg']; ?>"/>
+                                        <path <?php echo $path_classes . $id; ?>d="<?php echo $element['svg']; ?>"/>
                                     </svg>
+                                <?php else:
+                                    $title = get_the_title(); ?>
+                                    <div class="plx-cartel">
+                                        <?php if ($title) : ?>
+                                            <h1><?php echo $title; ?></h1>
+                                        <?php endif; ?>
+                                        <?php if (get_the_content()) the_content(); ?>
+                                    </div>
                                 <?php endif;
                             endwhile; ?>
                         </div>
