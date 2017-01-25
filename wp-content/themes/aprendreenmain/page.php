@@ -34,6 +34,7 @@ $total = $res->committed;
                     if ($elements->have_posts()) :?>
                         <div id="<?php echo $parallax ?>" class="plx-section<?php echo ' '.$parallax ?>">
                             <?php while ($elements->have_posts()) : $elements->the_post();
+                                $id = (get_field('id')) ? ' id="' . get_field('id') . '" ' : '';
                                 $isSvg = get_field('declare_svg');
                                 $element = get_field('element');
                                 if ($isSvg) {
@@ -55,7 +56,7 @@ $total = $res->committed;
                                                                  alt="<?php echo $title; ?>">
                                 <?php elseif ($isSvg && $element && is_array($element) && (count($element) == 2)) :
                                     $path_classes = (get_field('path_classes')) ? 'class="' . get_field('path_classes') . '" ' : ''; ?>
-                                    <svg <?php echo $classes; ?>xmlns="http://www.w3.org/2000/svg"
+                                    <svg <?php echo $classes.$id; ?>xmlns="http://www.w3.org/2000/svg"
                                          viewBox="<?php echo $element['viewbox']; ?>">
                                         <title><?php echo $title; ?></title>
                                         <path <?php echo $path_classes; ?>d="<?php echo $element['svg']; ?>"/>
