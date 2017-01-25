@@ -5,6 +5,11 @@ module.exports = function () {
     });
 
     function initApp() {
-        console.log('hello');
+        var $start = document.querySelectorAll('.start');
+        setTimeout(function(){
+            for (var i = 0; i < $start.length; ++i) {
+                $start[i].classList.remove("start");
+            }
+        }, 500);
     }
 };

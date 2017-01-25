@@ -1,0 +1,7 @@
+@each $font in $font-styles {
+  #{nth($font, 1)} {
+    @include rem(font-size, nth($font, 2));
+    font-weight: nth($font, 3);
+  }
+
+}
