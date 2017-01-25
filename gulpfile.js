@@ -84,7 +84,7 @@ gulp.task('watch', function () {
 });
 
 gulp.task('uglifyJs', ['browserify'], function () {
-    return gulp.src(path.app_js + '*.js')
+    return gulp.src(path.dest_js + '*.js')
         .pipe(uglify())
         .pipe(gulp.dest(path.dest_js))
         .pipe(size());

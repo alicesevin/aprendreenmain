@@ -1,5 +1,30 @@
 <?php
 
+/************* ALLOW SVG UPLOAD *****************/
+
+function cc_mime_types($mimes) {
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
+
+add_filter( 'tiny_mce_before_init', 'fb_tinymce_add_pre' );
+function fb_tinymce_add_pre( $initArray ) {
+
+    // Comma separated string od extendes tags
+    // Command separated string of extended elements
+    $ext = 'svg[preserveAspectRatio|style|version|viewbox|xmlns],defs,linearGradient[id|x1|y1|z1]';
+
+    if ( isset( $initArray['extended_valid_elements'] ) ) {
+        $initArray['extended_valid_elements'] .= ',' . $ext;
+    } else {
+        $initArray['extended_valid_elements'] = $ext;
+    }
+    // maybe; set tiny paramter verify_html
+    //$initArray['verify_html'] = false;
+
+    return $initArray;
+}
 /************* CUSTOM DASHBOARD AND MENU *****************/
 
 function custom_menu()
@@ -34,6 +59,7 @@ function custom_menu()
         }
     }
 }
+
 add_action('admin_menu', 'custom_menu');
 
 
@@ -90,5 +116,34 @@ add_action('wp_dashboard_setup', 'remove_widgets');
 add_action('wp_dashboard_setup', 'add_widget');
 add_action('admin_menu', 'remove_commentstatus_meta_box');
 add_action('wp_before_admin_bar_render', 'remove_bar_links');
+
+/**
+ * COLUMNS ADMIN
+ */
+function order_column($defaults)
+{
+    $defaults['order_menu'] = 'Ordre';
+    return $defaults;
+}
+
+function order_column_sections_sortable($columns)
+{
+    $columns['order_menu'] = 'order_menu';
+    return $columns;
+}
+
+function order_column_sections($column_name)
+{
+    global $post;
+
+    if ($column_name == 'order_menu') {
+        $order = $post->menu_order;
+        echo $order;
+    }
+}
+
+add_filter('manage_edit-sections_sortable_columns', 'order_column_sections_sortable');
+add_filter('manage_sections_posts_columns', 'order_column');
+add_action('manage_sections_posts_custom_column', 'order_column_sections', 10, 2);
 
 ?>

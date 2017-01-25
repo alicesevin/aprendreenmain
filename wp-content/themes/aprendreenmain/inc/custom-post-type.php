@@ -14,6 +14,7 @@ function rewrite_rules()
 
 add_action('init', 'register_portrait');
 add_action('init', 'register_parrallax');
+add_action('init', 'register_sections');
 add_action('init', 'add_taxonomies');
 
 function register_portrait()
@@ -51,25 +52,60 @@ function register_portrait()
 
 }
 
-function register_parrallax()
+function register_sections()
 {
-    register_post_type('parrallax',
+    register_post_type('sections',
         array('labels' => array(
-            'name' => 'Parrallax',
-            'singular_name' => 'Parrallax',
-            'all_items' => 'Tous les parrallaxs',
-            'add_new' => 'Ajouter un parrallax',
-            'add_new_item' => 'Ajouter un nouveau parrallax',
-            'edit' => 'Editer le parrallax',
+            'name' => 'Sections',
+            'singular_name' => 'Section',
+            'all_items' => 'Toutes les sections',
+            'add_new' => 'Ajouter une section',
+            'add_new_item' => 'Ajouter une nouvelle section',
+            'edit' => 'Editer la section',
             'edit_item' => 'Editer',
-            'new_item' => 'Nouveau parrallax',
-            'view_item' => 'Voir le parrallax',
-            'search_items' => 'Chercher un parrallax',
-            'not_found' => 'Aucun parrallax trouvé',
-            'not_found_in_trash' => 'Aucun parrallax trouvé dans la poubelle',
+            'new_item' => 'Nouvelle section',
+            'view_item' => 'Voir la section',
+            'search_items' => 'Chercher une section',
+            'not_found' => 'Aucune section trouvée',
+            'not_found_in_trash' => 'Aucune section trouvée dans la poubelle',
             'parent_item_colon' => 'Parent'
         ),
-            'description' => 'Gestion des parrallaxs',
+            'description' => 'Gestion des sections',
+            'public' => true,
+            'publicly_queryable' => true,
+            'exclude_from_search' => false,
+            'show_ui' => true,
+            'query_var' => true,
+            'menu_position' => 4,
+            'menu_icon' => 'dashicons-welcome-widgets-menus',
+            'has_archive' => 'false',
+            'capability_type' => 'post',
+            'hierarchical' => false,
+            'supports' => array('title', 'editor', 'revisions', 'page-attributes')
+        )
+    );
+
+}
+
+function register_parrallax()
+{
+    register_post_type('parallax',
+        array('labels' => array(
+            'name' => 'Parallax',
+            'singular_name' => 'Parallax',
+            'all_items' => 'Tous les parallax',
+            'add_new' => 'Ajouter un parallax',
+            'add_new_item' => 'Ajouter un nouveau parallax',
+            'edit' => 'Editer le parallax',
+            'edit_item' => 'Editer',
+            'new_item' => 'Nouveau parallax',
+            'view_item' => 'Voir le parallax',
+            'search_items' => 'Chercher un parallax',
+            'not_found' => 'Aucun parallax trouvé',
+            'not_found_in_trash' => 'Aucun parallax trouvé dans la poubelle',
+            'parent_item_colon' => 'Parent'
+        ),
+            'description' => 'Gestion des parallax',
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => false,
@@ -85,22 +121,67 @@ function register_parrallax()
     );
 
 }
+
 function add_taxonomies()
 {
-    register_taxonomy('type',
-        array('parrallax'),
+    register_taxonomy('type_parallax',
+        array('parallax'),
         array('hierarchical' => true,
             'labels' => array(
                 'name' => 'Types',
-                'singular_name' => 'Type de parrallax',
-                'search_items' => 'Rechercher tous les types de parrallax',
-                'all_items' => 'Tous les types de parrallax',
+                'singular_name' => 'Type de parallax',
+                'search_items' => 'Rechercher tous les types de parallax',
+                'all_items' => 'Tous les types de parallax',
                 'parent_item' => 'Parent',
                 'parent_item_colon' => 'Parent',
-                'edit_item' => 'Editer le type de parrallax',
-                'update_item' => 'Mettre à jour le type de parrallax',
-                'add_new_item' => 'Ajouter un nouveau type de parrallax',
-                'new_item_name' => 'Nouveau type de parrallax'
+                'edit_item' => 'Editer le type de parallax',
+                'update_item' => 'Mettre à jour le type de parallax',
+                'add_new_item' => 'Ajouter un nouveau type de parallax',
+                'new_item_name' => 'Nouveau type de parallax'
+            ),
+            'show_admin_column' => true,
+            'show_ui' => true,
+            'query_var' => true,
+            'rewrite' => array('slug' => 'type_parallax'),
+        )
+    );
+
+    register_taxonomy('section_parallax',
+        array('parallax'),
+        array('hierarchical' => true,
+            'labels' => array(
+                'name' => 'Sections',
+                'singular_name' => 'Section de parallax',
+                'search_items' => 'Rechercher toutes les sections de parallax',
+                'all_items' => 'Toutes les sections',
+                'parent_item' => 'Parent',
+                'parent_item_colon' => 'Parent',
+                'edit_item' => 'Editer la section',
+                'update_item' => 'Mettre à jour la section',
+                'add_new_item' => 'Ajouter un nouvelle section',
+                'new_item_name' => 'Nouvelle section'
+            ),
+            'show_admin_column' => true,
+            'show_ui' => true,
+            'query_var' => true,
+            'rewrite' => array('slug' => 'type_parallax'),
+        )
+    );
+
+    register_taxonomy('type',
+        array('sections'),
+        array('hierarchical' => true,
+            'labels' => array(
+                'name' => 'Types',
+                'singular_name' => 'Type de section',
+                'search_items' => 'Rechercher tous les types de section',
+                'all_items' => 'Tous les types de section',
+                'parent_item' => 'Parent',
+                'parent_item_colon' => 'Parent',
+                'edit_item' => 'Editer le type de section',
+                'update_item' => 'Mettre à jour le type de section',
+                'add_new_item' => 'Ajouter un nouveau type de section',
+                'new_item_name' => 'Nouveau type de section'
             ),
             'show_admin_column' => true,
             'show_ui' => true,
@@ -109,4 +190,5 @@ function add_taxonomies()
         )
     );
 }
+
 ?>

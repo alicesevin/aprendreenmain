@@ -1,0 +1,54 @@
+//Section
+.plx-section {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+//Profondeur & Couleur
+.section1 {
+  @include css-gradient($from: #dfc863, $to: #f8f8f8);
+  @include plx-colors($section1-color);
+}
+
+.section2 {
+  @include plx-colors($section2-color);
+}
+
+//Elements
+
+$actualLeft: 0;
+.plx {
+  svg,
+  img {
+    position: absolute;
+    &:not(.fond) {
+      transition: all 4s;
+    }
+    //Position
+    @for $i from -50 through 150 {
+      $left: -50% !global;
+      @if $i > 55 {
+        $left: 150% !global;
+      }
+
+      &.plx-x-#{$i} {
+        left: percentage($i/100);
+        &:not(.fond) {
+          &.start {
+            left: $left;
+          }
+        }
+      }
+      /*&.plx-y-#{$i} {
+        top: percentage($i/100);
+      }*/
+
+      //Largeur
+      &.plx-w-#{$i} {
+        width: percentage($i/100);
+      }
+    }
+  }
+}
