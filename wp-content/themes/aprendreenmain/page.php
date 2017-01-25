@@ -77,6 +77,7 @@ $total = $res->committed;
                         </div>
                     <?php endif;
                 endforeach; ?>
+                <span id="trigger1"></span>
             </div>
         <?php endif; ?>
         <div class="container">
