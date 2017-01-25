@@ -17,6 +17,22 @@ PX TO REM
   #{$property}: $rem $content;
 }
 
+@mixin rem($property, $values,$content : null) {
+  $max: length($values);
+  $rem: ();
+
+  @each $value in $values {
+    @if $value == 0 or $value == auto {
+      $rem: append($rem, $value);
+    } @else {
+      $unit: unit($value);
+      $val: parseInt($value);
+      $rem: append($rem, ($val / 10 + rem))
+    }
+  }
+  #{$property}: $rem $content;
+}
+
 /*********************
 TRANSITION
 *********************/
@@ -50,4 +66,99 @@ BOX-SZING
   -moz-box-sizing: $type;
   -ms-box-sizing: $type;
   box-sizing: $type;
+}
+
+@mixin plx-sizes($property,$i) {
+  #{$property}: percentage($i/100);
+}
+
+// Multiplicateur/sm/xs
+$indexes: (
+                (-20, 0, 4),
+                (-10, 0, 7),
+                (-8, 0, 13),
+                (-4, 5, 18),
+                (-1, 0, 15),
+                (2, -10, 13),
+                (0, 2, 25),
+                (3, -4, 12)
+);
+
+@mixin plx-colors($colors) {
+  @each $color in $colors {
+    $index: abs(index($colors, $color));
+    $max-width: 50*9/$index;
+    $min-width: 50/20*$index;
+    $list: nth($indexes, abs($index));
+    $sm: nth($list, 2);
+    $xs: nth($list, 3);
+    $top: ($index*10) - ( $index * nth($list, 1) );
+
+    @if ($max-width>100) {
+      $max-width: 100;
+    }
+
+    //Hauteur des fonds
+
+    .plx-z-#{$index} {
+      top: percentage($top/100);
+      fill: #{$color};
+      z-index: #{$index};
+      max-width: percentage($max-width/100);
+      min-width: percentage($min-width/100);
+      @if ($sm != 0) {
+        @media screen and (max-width: $sm-max) {
+          top: percentage(($top - $sm)/100);
+        }
+      }
+      @if ($xs != 0) {
+        @media screen and (max-width: $xs-max) {
+          top: percentage(($top - $xs)/100);
+        }
+      }
+      &.arbre {
+        $coefficient:0;
+        @if ($index>4) {
+          $coefficient: ($max-width - 20);
+        } @else {
+          $coefficient: ($min-width + 5);
+        }
+        $arbre-top: (($index*10) - ( $index * nth($list, 1) )) - $coefficient;
+        top: percentage($arbre-top/100);
+        @if ($sm != 0) {
+          @if ($index<=4) {
+            $arbre-top: $arbre-top + $index;
+          }
+          @media screen and (max-width: $sm-max) {
+            top: percentage(($arbre-top - $sm)/100);
+          }
+        }
+        @if ($xs != 0) {
+
+          @if ($index<=4) {
+            $arbre-top: $arbre-top - (($index*10)/1.5);
+          }
+          @media screen and (max-width: $xs-max) {
+            top: percentage(($arbre-top + $xs)/100);
+          }
+        }
+      }
+      &.fond {
+        $fond-top: $top;
+
+        top: percentage($fond-top/100);
+        @if ($sm != 0) {
+          @media screen and (max-width: $sm-max) {
+            top: percentage(($fond-top - $sm) /100);
+          }
+        }
+        @if ($xs != 0) {
+          @media screen and (max-width: $xs-max) {
+            top: percentage(($fond-top - $xs) /100);
+          }
+        }
+        max-width: none;
+      }
+    }
+  }
 }

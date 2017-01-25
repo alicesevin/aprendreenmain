@@ -27,7 +27,7 @@
 
 <div id="container">
 
-    <header class="header">
+    <!--<header class="header">
 
         <div class="inner-header">
 
@@ -56,4 +56,4 @@
 
         </div>
 
-    </header>
+    </header>-->

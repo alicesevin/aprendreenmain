@@ -97,11 +97,13 @@ function load_styles()
     if (!is_admin()) {
 
         // Styles
+        wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), null);
         wp_register_style('theme-styles', get_stylesheet_directory_uri() . '/dist/css/main.css', array(), null);
 
         //Scripts
         wp_enqueue_script('theme-script', get_stylesheet_directory_uri() . '/dist/js/main.js', array(), null);
 
+        wp_enqueue_style('bootstrap');
         wp_enqueue_style('theme-styles');
         wp_enqueue_script('theme-script');
 
@@ -111,7 +113,7 @@ function load_styles()
 
 function load_fonts()
 {
-    wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+    wp_enqueue_style('googleFonts', '//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
 }
 
 function remove_embed()
