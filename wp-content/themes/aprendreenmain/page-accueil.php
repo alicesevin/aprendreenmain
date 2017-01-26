@@ -88,8 +88,9 @@ if (count($parallaxs) > 0):?>
         endforeach; ?>
     </div>
 <?php endif;
-wp_reset_postdata();?>
-    <div class="main">
+wp_reset_postdata(); ?>
+    <div class="main home">
+        <img class="plx-bottom" src="<?php echo get_template_directory_uri() . '/app/img/racine-green.png' ?>">
         <?php
         //Add Header
         get_template_part('templates/tpl', 'header'); ?>

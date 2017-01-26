@@ -1,9 +1,13 @@
 //Section
+.plx {
+  height: 100vh;
+}
+
 .plx-section {
-  height: 110vh;
+  height: 100%;
   width: 100%;
   overflow: hidden;
-  position: relative;
+  position: absolute;
 }
 
 //Profondeur & Couleur
@@ -13,8 +17,7 @@
 }
 
 .section2 {
-  @include css-gradient($from: #87A330, $to: #ADD9A0);
-  @include plx-colors($section3-color);
+  @include plx-colors($section2-color);
 }
 
 //Elements
@@ -84,7 +87,7 @@ $actualLeft: 0;
     }
   }
 
-  .plx-cartel{
+  .plx-cartel {
     color: $xxLight;
     display: inline-block;
     position: absolute;
@@ -92,7 +95,7 @@ $actualLeft: 0;
     left: 50%;
     transform: translateX(-50%);
     z-index: 3000;
-    h1{
+    h1 {
       @include rem(font-size, 40px);
       font-weight: $semibold;
       margin-bottom: 25px;
@@ -100,39 +103,61 @@ $actualLeft: 0;
   }
 }
 
-path.nuagecustom{
-  fill : #c98146;
+.plx-bottom {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 30000;
+  left: 50%;
+  transform: translateX(-50%);
+  @media screen and (max-width: $sm-max) {
+    width: 200%;
+  }
+  @media screen and (max-width: $xs-max) {
+    width: 250%;
+  }
 }
-img.puit{
+
+path.nuagecustom {
+  fill: #c98146;
+}
+
+img.puit {
   height: 20%;
   opacity: 0;
 }
-img.pompe{
-  opacity:0;
+
+img.pompe {
+  opacity: 0;
 }
-img.sceau{
+
+img.sceau {
   height: 7%;
-  opacity:0;
+  opacity: 0;
 }
-img.garcon,img.garcon2,img.garcon3{
+
+img.garcon, img.garcon2, img.garcon3 {
   height: 15%;
-  opacity:0;
+  opacity: 0;
 }
-img.ouvrier{
+
+img.ouvrier {
   height: 20%;
-  opacity:0;
-} 
-img.femme,img.femme2,img.femme3, img.homme,img.homme2,img.homme3,{
+  opacity: 0;
+}
+
+img.femme, img.femme2, img.femme3, img.homme, img.homme2, img.homme3 {
   height: 22%;
   opacity: 0;
 }
 
-img.pieces, img.pieces2{
+img.pieces, img.pieces2 {
   height: 3%;
   // width: 10%;
   opacity: 0;
 }
-.maison{
-  opacity:0;
+
+.maison {
+  opacity: 0;
 }
 

@@ -1,5 +1,18 @@
 //Templates
 .tpl {
+  div {
+    z-index: 2;
+    &.form {
+      width: 200px;
+      height: 100px;
+      background: $corpo1;
+      position: absolute;
+      left: 105%;
+      top: 30%;
+      z-index: 0;
+      opacity: 1;
+    }
+  }
   h1 {
     @include rem(line-height, 33px);
     &:after {
@@ -27,14 +40,14 @@
     h1:after {
       margin: 15px auto 0;
     }
-    .tabs-item{
-      p{
+    .tabs-item {
+      p {
         margin: 20px auto;
       }
-      ul{
+      ul {
         margin: 20px;
       }
-      li{
+      li {
         text-align: left;
       }
     }
@@ -42,6 +55,7 @@
   &-act {
     li {
       list-style: none;
+      margin-bottom: 30px;
     }
   }
   &-prt {

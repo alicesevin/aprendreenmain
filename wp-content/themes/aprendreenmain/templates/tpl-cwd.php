@@ -12,3 +12,4 @@
     <?php the_content(); ?>
     <button class="btn"><a href="#">Faire un don</a></button>
 </div>
+<div class="form form1"></div>
