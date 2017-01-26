@@ -1,6 +1,6 @@
 //Section
 .plx-section {
-  height: 100vh;
+  height: 110vh;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -98,4 +98,36 @@ $actualLeft: 0;
   }
 }
 
+path.nuagecustom{
+  fill : #c98146;
+}
+img.puit{
+  height: 20%;
+  opacity: 0;
+}
+img.pompe{
+  opacity:0;
+}
+img.sceau{
+  height: 7%;
+  opacity:0;
+}
+img.garcon,img.garcon2,img.garcon3{
+  height: 15%;
+  opacity:0;
+}
+img.ouvrier{
+  height: 20%;
+  opacity:0;
+} 
+img.femme,img.femme2,img.femme3, img.homme,img.homme2,img.homme3,{
+  height: 22%;
+  opacity: 0;
+}
+
+img.pieces, img.pieces2{
+  height: 3%;
+  // width: 10%;
+  opacity: 0;
+}
 
