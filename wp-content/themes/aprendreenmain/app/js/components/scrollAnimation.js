@@ -1,6 +1,6 @@
 var ScrollMagic = require('scrollmagic');
 require('scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap');
-require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js');
+// require('scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js');
 var TweenMax = require("gsap");
 var $ = require('jquery');
 
