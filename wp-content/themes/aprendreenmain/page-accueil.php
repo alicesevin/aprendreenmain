@@ -14,6 +14,7 @@ $parallaxs = get_terms(array(
     'fields' => 'slugs'
 ));
 if (count($parallaxs) > 0):?>
+    <!--<div id="trigger1"></div>-->
     <div class="plx">
         <?php foreach ($parallaxs as $parallax) :
             $args = array(
@@ -75,10 +76,11 @@ if (count($parallaxs) > 0):?>
         endforeach; ?>
     </div>
 <?php endif;
-wp_reset_postdata();
-//Add Header
-get_template_part('templates/tpl', 'header'); ?>
+wp_reset_postdata();?>
     <div class="main">
+        <?php
+        //Add Header
+        get_template_part('templates/tpl', 'header'); ?>
         <div class="container">
             <?php
             $sections = new WP_Query(array(
