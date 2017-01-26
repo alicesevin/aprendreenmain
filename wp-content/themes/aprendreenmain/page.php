@@ -10,6 +10,7 @@ $require = $res->goal;
 $total = $res->committed;
 ?>
     <div class="main">
+    <span id="trigger1"></span>
         <?php $parallaxs = get_terms(array(
             'taxonomy' => 'section_parallax',
             'hide_empty' => true,
@@ -77,7 +78,6 @@ $total = $res->committed;
                         </div>
                     <?php endif;
                 endforeach; ?>
-                <span id="trigger1"></span>
             </div>
         <?php endif; ?>
         <div class="container">
