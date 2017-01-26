@@ -1,22 +1,38 @@
-// Fonts
-$browser-context: 16;
-$font-primary: 'Source Sans Pro';
-$font-blanc: #ffffff;
-$font-noir: #000000;
+/**** FONTS ****/
+
+//Weight
 $regular : 400;
 $semibold : 500;
 $bold : 600;
+
+//Size
+$browser-context: 16;
+
+//Declarations
+$font-primary: 'Source Sans Pro';
 $font-styles: (
-        h1 32px $semibold uppercase,
-        h2 28px $semibold uppercase,
-        h3 24px $semibold uppercase,
-        h4 20px $semibold uppercase,
-        h5 18px $regular uppercase,
-        h6 16px $regular uppercase,
-        p 15px $regular '-'
+        h1 40px $bold,
+        h2 36px $semibold,
+        h3 32px $semibold,
+        h4 28px $semibold,
+        h5 22px $semibold,
+        h6 18px $semibold,
+        p 15px $regular
 );
 
-// Breakpoints
+/**** COLORS ****/
+
+$xxLight : #fff;
+$xLight : #dddee3;
+$light: #bababa;
+$dark: #000000;
+$corpo1: #5ec1b5;
+$corpo2: #e64f45;
+$corpo3: #f1b256;
+$fond : #f9f9f9;
+
+/**** BREAKPOINTS ****/
+
 $xxs-min: 579px;
 $xxs-max: 580px;
 $xs-max: 767px;
@@ -26,19 +42,12 @@ $md-min: 992px;
 $md-max: 1199px;
 $lg-min: 1200px;
 
-//ELEMENTS DU PARALLAX
+/**** PARALLAX ****/
+
 $left: 0;
 $transition: 0;
-$cartel-plx: (
-        25px,
-        #d5d5d5,
-        #acacac,
-        #818181,
-        #727272,
-        #424242,
-        #2d2d2d,
-        #0d0d0d,
-);
+
+//Sections-Colors
 $section2-color: (
         #f1f1f1,
         #d5d5d5,
