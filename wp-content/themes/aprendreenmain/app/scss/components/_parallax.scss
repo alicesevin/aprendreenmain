@@ -53,6 +53,7 @@ $actualLeft: 0;
           }
         }
       }
+      &.animal.plx-y-#{$i},
       &.arbre.plx-y-#{$i},
       &.plx-y-#{$i} {
         @if $i >0 {
@@ -83,7 +84,7 @@ $actualLeft: 0;
   }
 
   .plx-cartel{
-    color: $font-blanc;
+    color: $xxLight;
     display: inline-block;
     position: absolute;
     top: 10%;

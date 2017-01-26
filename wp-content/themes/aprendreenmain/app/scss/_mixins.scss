@@ -117,9 +117,11 @@ $indexes: (
           bottom: percentage(($top - $xs)/100);
         }
       }
+      &.animal,
       &.arbre {
         transition: left #{$time}s ease-in-out 1s;
         bottom: percentage((($index*nth($list, 4))-17)/100);
+        transform: translateY(percentage((($index*nth($list, 4))-17)/100));
         @media screen and (max-width: $md-max) {
           bottom: percentage((($index*nth($list, 4))-(nth($list, 4)/$index)-17)/100);
         }

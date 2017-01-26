@@ -1,0 +1,58 @@
+//Templates
+.tpl {
+  h1 {
+    @include rem(line-height, 33px);
+    &:after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 5px;
+      margin-top: 25px;
+      background: $corpo1;
+    }
+    margin-bottom: 50px;
+  }
+
+  &-cdwd {
+    h1 {
+      @include rem(font-size, 30px);
+      &:after {
+        display: none;
+      }
+    }
+  }
+  &-txt,
+  &-tabs {
+    text-align: center;
+    h1:after {
+      margin: 15px auto 0;
+    }
+    .tabs-item{
+      p{
+        margin: 20px auto;
+      }
+      ul{
+        margin: 20px;
+      }
+      li{
+        text-align: left;
+      }
+    }
+  }
+  &-act {
+    li {
+      list-style: none;
+    }
+  }
+  &-prt {
+    &__list {
+      text-align: center;
+    }
+    img {
+      max-height: 45px;
+      max-width: 60%;
+      width: auto;
+      height: auto;
+    }
+  }
+}

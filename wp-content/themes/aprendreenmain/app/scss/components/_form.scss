@@ -1,0 +1,18 @@
+label{
+  color: $light;
+  font-weight: $semibold;
+  width: 100%;
+}
+input:not([type="submit"]),
+textarea{
+  @include rem(font-size, 14px);
+  border: 2px solid $xLight;
+  margin: 5px 0;
+  display: block;
+  resize: none;
+  padding: 5px;
+  color: $dark;
+  font-weight: $regular;
+  outline-color: $light;
+  width: 100%;
+}

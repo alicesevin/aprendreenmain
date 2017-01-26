@@ -6,5 +6,12 @@
 @import 'global';
 @import 'typos';
 
-// Composants
+//Components
+@import 'components/buttons';
+@import 'components/form';
+@import 'components/lists';
+@import 'components/header';
+// Parallax
 @import 'components/parallax';
+//Templates
+@import 'components/tpl';

@@ -1,0 +1,41 @@
+.header {
+  z-index: 200;
+  position: static;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: #fff;
+  clear: both;
+  overflow: hidden;
+  &.sticky{
+    position: fixed;
+  }
+  .container {
+    padding: {
+      top: 10px;
+      bottom: 10px;
+    }
+  }
+  #logo {
+    float: left;
+    margin: 0;
+    img {
+      width: 50px;
+    }
+  }
+  #main-nav {
+    float: right;
+    .tab-list {
+      display: inline-block;
+      margin: 0;
+    }
+    .tabs{
+      padding: 0 15px;
+      margin: 0 15px;
+    }
+    button {
+      display: inline-block;
+      margin: 0;
+    }
+  }
+}
