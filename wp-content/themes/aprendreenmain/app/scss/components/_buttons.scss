@@ -1,0 +1,58 @@
+input[type="submit"],
+input[type="button"],
+button {
+  display: block;
+  border: none;
+  background: lighten($corpo1, 10%);
+  border-radius: 4px;
+  margin-top: 25px;
+  transition: all 0.4s;
+  a {
+    padding: 7px 20px;
+    display: block;
+    color: $dark;
+    text-transform: uppercase;
+    @include rem(font-size, 12px);
+    font-weight: $bold;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    transition: all 0.4s;
+    background: $corpo1;
+    a {
+      text-decoration: none;
+    }
+  }
+  &.red-btn {
+    background: lighten($corpo2, 10%);
+    a {
+      color: $xxLight;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background: $corpo2;
+    }
+  }
+}
+input[type="submit"],
+input[type="button"]{
+  padding: 7px 20px;
+  display: block;
+  color: $dark;
+  text-transform: uppercase;
+  @include rem(font-size, 12px);
+  font-weight: $bold;
+  &.red-btn {
+    color: $xxLight;
+  }
+}
+.btn-container{
+  clear: both;
+  text-align: center;
+  padding-top: 20px;
+  button{
+    display: inline-block;
+  }
+}

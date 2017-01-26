@@ -1,0 +1,159 @@
+//Ronds
+.round {
+  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  img {
+    width: 100%;
+  }
+}
+
+//Listes
+.bck-list {
+  [class^='list-item'] {
+    box-shadow: 0.7px 0.7px 3px 0 rgba(1, 2, 2, 0.2);
+  }
+}
+
+.decale {
+  padding-top: 155px;
+  @media screen and (max-width: $xs-max) {
+    padding-top: 0;
+  }
+  &-small {
+    padding-top: 65px;
+    @media screen and (max-width: $xs-max) {
+      padding-top: 0;
+    }
+  }
+}
+
+[class^='list-item'] {
+  list-style: none;
+  > img {
+    width: 100%;
+  }
+  p {
+    @include rem(font-size, 14px);
+  }
+}
+
+.list-item {
+  padding: 25px 30px;
+  &__tpl-act {
+    background: $xxLight;
+    height: 330px;
+    overflow: hidden;
+    @include rem(padding, 40px);
+    &:before {
+      content: '‘‘';
+      @include rem(font-size, 50px);
+      display: block;
+      color: $corpo1;
+      $font-weight: $bold;
+    }
+    p {
+      margin: 20px 0;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 7;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .link-item {
+      display: block;
+      @include rem(font-size, 14px);
+      $font-weight: $bold;
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: lighten($corpo1, 15%);
+      &.active,
+      &:active,
+      &:focus,
+      &:hover {
+        color: $corpo1;
+      }
+
+    }
+    li:nth-child(3n+2) & {
+      &:before {
+        color: $corpo2;
+      }
+      .link-item {
+        color: lighten($corpo2, 15%);
+        &.active,
+        &:active,
+        &:focus,
+        &:hover {
+          color: $corpo2;
+        }
+      }
+    }
+    li:nth-child(3n+3) & {
+      &:before {
+        color: $corpo3;
+      }
+      .link-item {
+        color: lighten($corpo3, 15%);
+        &.active,
+        &:active,
+        &:focus,
+        &:hover {
+          color: $corpo3;
+        }
+      }
+      @media screen and (max-width: $sm-max) {
+        margin-bottom: 50px;
+      }
+    }
+  }
+  &__tpl-eqp {
+    @include rem(margin, 50px 10px 0 10px);
+    min-height: 365px;
+    background: $xxLight;
+    &:first-child {
+      margin-top: 0;
+    }
+    strong {
+      display: block;
+      @include rem(margin, 20px 0);
+      @include rem(line-height, 20px);
+      @include rem(font-size, 15px);
+      span {
+        color: $corpo1;
+        display: block;
+      }
+    }
+  }
+}
+
+.tab-list {
+  text-align: center;
+}
+
+.tabs {
+  display: inline-block;
+  cursor: pointer;
+  padding: 15px;
+  margin: 15px;
+  a{
+    text-decoration: none;
+    color: $light;
+    &.active,
+    &:active,
+    &:focus,
+    &:hover {
+      color: $dark;
+    }
+  }
+}
+
+.tabs-item {
+  display: none;
+  &:first-child {
+    display: block;
+  }
+}

@@ -24,7 +24,9 @@ function clean_head()
 
     // Page d'options
     if (function_exists('acf_add_options_page')) {
-        acf_add_options_page();
+        acf_add_options_sub_page('Options');
+        acf_add_options_sub_page('Partenaires');
+        acf_add_options_sub_page('Sociaux');
         acf_add_options_sub_page('Back-Office');
     }
 
@@ -130,15 +132,16 @@ function theme_support()
 {
     //FEED RSS
     add_theme_support('automatic-feed-links');
+    add_theme_support( 'post-thumbnails' );
 
-    //MENUS
+    /*//MENUS
     add_theme_support('menus');
 
     register_nav_menus(
         array(
             'main-nav' => 'Menu principal'
         )
-    );
+    );*/
 
 }
 
