@@ -58,7 +58,8 @@ $total = $res->committed;
                                                                        alt="<?php echo $title; ?>">
                                 <?php elseif ($isSvg && $element && is_array($element) && (count($element) == 2)) :
                                     $path_classes = (get_field('path_classes')) ? 'class="' . get_field('path_classes') . '" ' : ''; ?>
-                                    <svg <?php echo $classes.$id; ?>xmlns="http://www.w3.org/2000/svg"
+
+                                    <svg <?php echo $classes . $id; ?>xmlns="http://www.w3.org/2000/svg"
                                          viewBox="<?php echo $element['viewbox']; ?>">
                                         <title><?php echo $title; ?></title>
                                         <path <?php echo $path_classes . $id; ?>d="<?php echo $element['svg']; ?>"/>
