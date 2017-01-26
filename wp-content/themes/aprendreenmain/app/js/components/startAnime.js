@@ -34,13 +34,13 @@ module.exports = function () {
             // TImelines
 
             var tl = new TimelineMax();
-            tl.from('.plx-z-7.fond', duration, landAnimation)
+            tl.to('.plx-z-7.fond', duration, landAnimation)
                 .from('.plx-z-6.fond', duration, landAnimation, offset1)
                 .from('.plx-z-5.fond', duration, landAnimation)
                 .from('.plx-z-4.fond', duration, landAnimation)
                 .from('.plx-z-3.fond', duration, landAnimation, offset1)
-                .from('.plx-z-2.fond', duration, landAnimation, '-=1.2')
-                .from('.plx-z-1.fond', duration, landAnimation, '-=1.7')
+                .from('.plx-z-2.fond', duration, landAnimation, '-=1.8')
+                .from('.plx-z-1.fond', duration, landAnimation, '-=1.8')
 
             duration2 = 2.2;
             
@@ -51,6 +51,7 @@ module.exports = function () {
                 .from('.arbre4', duration2, toRight, offset2)
                 .from('.arbre4', duration2, toRight, offset2)
                 .from('.plx-cartel', 0.3, textAnimation)
+
 
         });
     })();
