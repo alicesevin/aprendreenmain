@@ -17,22 +17,6 @@ PX TO REM
   #{$property}: $rem $content;
 }
 
-@mixin rem($property, $values,$content : null) {
-  $max: length($values);
-  $rem: ();
-
-  @each $value in $values {
-    @if $value == 0 or $value == auto {
-      $rem: append($rem, $value);
-    } @else {
-      $unit: unit($value);
-      $val: parseInt($value);
-      $rem: append($rem, ($val / 10 + rem))
-    }
-  }
-  #{$property}: $rem $content;
-}
-
 /*********************
 TRANSITION
 *********************/
@@ -118,7 +102,7 @@ $indexes: (
         }
       }
       &.arbre {
-        transition: left #{$time}s ease-in-out 1s;
+        /*transition: left #{$time}s ease-in-out 1s;*/
         bottom: percentage((($index*nth($list, 4))-17)/100);
         @media screen and (max-width: $md-max) {
           bottom: percentage((($index*nth($list, 4))-(nth($list, 4)/$index)-17)/100);
@@ -151,15 +135,15 @@ $indexes: (
           width: 200%;
         }
         max-width: none;
-        transition: all #{$time}s;
+        /*transition: all #{$time}s;*/
         opacity: 1;
-        &.start {
-          @if ($index>=3) {
-            bottom: -100%;
-          } @else {
-            opacity: 0;
-          }
-        }
+        // &.start {
+        //   @if ($index>=3) {
+        //     bottom: -100%;
+        //   } @else {
+        //     opacity: 0;
+        //   }
+        // }
       }
     }
   }
