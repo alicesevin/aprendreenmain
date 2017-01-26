@@ -13,7 +13,8 @@
 }
 
 .section2 {
-  @include plx-colors($section2-color);
+  @include css-gradient($from: #87A330, $to: #ADD9A0);
+  @include plx-colors($section3-color);
 }
 
 //Elements
@@ -130,5 +131,8 @@ img.pieces, img.pieces2{
   height: 3%;
   // width: 10%;
   opacity: 0;
+}
+.maison{
+  opacity:0;
 }
 

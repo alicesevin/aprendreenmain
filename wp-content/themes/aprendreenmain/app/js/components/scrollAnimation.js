@@ -22,7 +22,9 @@ module.exports = function () {
                 homme3 = $('.homme3'),
                 pieces = $('.pieces'),
                 pieces2 = $('.pieces2'),
-                etape1 = $('.plx-cartel');
+                etape1 = $('.plx-cartel'),
+                section1 = $('#section1'),
+                maisons = $('.maison');
 
             var tl = new TimelineMax()
                 .add(TweenMax.to(puit, 0.1, { opacity: 1 }))
@@ -39,37 +41,33 @@ module.exports = function () {
                 .add(TweenMax.to(ouvrier, 0.4, { opacity: 1 }))
                 // etape 5
                 // TODO texte etape5
-                .add(TweenMax.to(sceau, 0.1, { opacity: 0 }))
-                .add(TweenMax.to(puit, 0.1, { opacity: 0 }))
-                .add(TweenMax.to(pompe, 0.4, { opacity: 1 }))
+                .add(TweenMax.to([sceau, puit], 0.1, { opacity: 0 }))
+                .add(TweenMax.to(pompe, 0.1, { opacity: 1 }))
                 // etape 6
                 // TODO texte etape6
-                .add(TweenMax.to(femme, 0.4, { opacity: 1 }))
-                .add(TweenMax.to(pieces, 0.4, { opacity: 1 }), "-=0.5")
-                .add(TweenMax.to(homme, 0.4, { opacity: 1 }), "-=0.8")
+                .add(TweenMax.to([femme, pieces, homme], 0.4, { opacity: 1 }))
                 // etape 7
                 //TODO texte etape7
                 .add(TweenMax.to(pieces2, 0.4, { opacity: 1 }))
                 // etape 7
                 //TODO texte etape7
-                .add(TweenMax.to(femme2, 0.4, { opacity: 1 }))
-                .add(TweenMax.to(femme3, 0.4, { opacity: 1 }), "end")
-                .add(TweenMax.to(homme2, 0.4, { opacity: 1 }), "end")
-                .add(TweenMax.to(homme3, 0.4, { opacity: 1 }), "end")
-                .add(TweenMax.to(homme2, 0.4, { opacity: 1 }), "end")
-                .add(TweenMax.to(homme3, 0.4, { opacity: 1 }), "end")
-                .add(TweenMax.to(garcon, 0.4, { opacity: 1 }), "end")
-                .add(TweenMax.to(garcon3, 0.4, { opacity: 1 }), "end")
+                .add(TweenMax.to([femme2, femme3, homme2, homme3, garcon, garcon3], 0.4, { opacity: 1 }))
+                //etape 8
+                //TODO texte etape7
+                .add(TweenMax.to(maisons, 0.4, { opacity: 1 }))
+                .add(TweenMax.set(section1, { className: "-=section1", immediateRender: false }))
+                .add(TweenMax.set(section1, { className: "+=section2", immediateRender: false }))
+                .add(TweenMax.to([femme, femme2, femme3, homme, homme2, homme3, garcon, garcon3, pieces, pieces2], 0.4, { opacity: 0 }))
             // init controller
             var controller = new ScrollMagic.Controller();
             // build scene
             var scene = new ScrollMagic.Scene({
                 triggerElement: "#trigger1",
-                duration: 800,
+                duration: 1000,
                 offset: 395
             }).setTween(tl)
                 .setPin(".plx")
-                .addIndicators() // add indicators (requires plugin)
+                // .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
         })
 
