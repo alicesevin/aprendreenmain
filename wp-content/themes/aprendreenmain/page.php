@@ -10,7 +10,7 @@ $require = $res->goal;
 $total = $res->committed;
 ?>
     <div class="main">
-    <span id="trigger1"></span>
+        <div id="trigger1"></div>
         <?php $parallaxs = get_terms(array(
             'taxonomy' => 'section_parallax',
             'hide_empty' => true,
@@ -80,6 +80,7 @@ $total = $res->committed;
                 endforeach; ?>
             </div>
         <?php endif; ?>
+        <div class="pin"></div>
         <div class="container">
             <?php
             $sections = new WP_Query(array(
