@@ -12,7 +12,7 @@ module.exports = function () {
       // get a random number
       function getRandomNumber(max, min){
         var result = Math.random() * (max - min) + min;
-        // console.info(result);
+        console.info(result);
         return Math.ceil(result);
       }
       
