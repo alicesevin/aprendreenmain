@@ -1,5 +1,6 @@
 .idea/
 .htaccess
+wp-content/themes/aprendreenmain/dist/
 .DS_Store
 wp-config.php
 wp-content/uploads/
