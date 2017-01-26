@@ -5,3 +5,4 @@ wp-config.php
 wp-content/uploads/
 node_modules/
 *.map
+wp-content/themes/aprendreenmain/dist/js/*
