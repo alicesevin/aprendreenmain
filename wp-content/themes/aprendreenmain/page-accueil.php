@@ -2,12 +2,24 @@
 get_header();
 the_post();
 // send request too Ulule
-$request = wp_remote_get("https://api.ulule.com/v1/projects/9892");
+$request = wp_remote_get("https://api.ulule.com/v1/projects/du-soleil-a-la-lumiere");
 $res = json_decode($request["body"]);
 // set price require
 $require = $res->goal;
 // set price committed
 $total = $res->committed;
+// date end
+$date_end = $res->date_end;
+
+// Localize the script with new data
+wp_enqueue_script( 'ulule' );
+$translation_val = array(
+    'require' => $require,
+    'total' => $total
+);
+wp_localize_script( 'ulule', 'ulule', $translation_val);
+
+
 $parallaxs = get_terms(array(
     'taxonomy' => 'section_parallax',
     'hide_empty' => true,

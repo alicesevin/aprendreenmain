@@ -101,9 +101,9 @@ function load_styles()
         // Styles
         wp_register_style('bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css', array(), null);
         wp_register_style('theme-styles', get_stylesheet_directory_uri() . '/dist/css/main.css', array(), null);
-
         //Scripts
         wp_enqueue_script('theme-script', get_stylesheet_directory_uri() . '/dist/js/main.js', array(), null);
+        wp_register_script('ulule', get_stylesheet_directory_uri() .'/app/js/components/cwd.js', array(), null );
 
         wp_enqueue_style('bootstrap');
         wp_enqueue_style('theme-styles');

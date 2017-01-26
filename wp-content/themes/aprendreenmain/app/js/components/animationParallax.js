@@ -12,21 +12,24 @@ module.exports = function () {
       // get a random number
       function getRandomNumber(max, min){
         var result = Math.random() * (max - min) + min;
-        console.info(result);
         return Math.ceil(result);
       }
       
       // move background
       setInterval(function(){
 
-        var distance = getRandomNumber(30, -30);
+        var distance = getRandomNumber(10, 0);
         var duree = getRandomNumber(4, 0);
-        var anime = 3
+        var anime = 3;
 
-        TweenMax.staggerTo([fond1, fond2], anime, {
-          y : distance ,
-        }, duree);
-      }, 5000);
+        TweenMax.to(fond2, anime, {
+          y : distance
+        });
+
+        TweenMax.staggerTo(cloud, 2, {
+          y : distance
+        });
+      }, 3000);
 
 
 // anonimate function
