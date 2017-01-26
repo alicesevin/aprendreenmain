@@ -29,6 +29,7 @@
   "dependencies": {
     "gsap": "^1.19.1",
     "jquery": "^3.1.1",
-    "scrollmagic": "^2.0.5"
+    "scrollmagic": "^2.0.5",
+    "snapsvg": "^0.4.0"
   }
 }
