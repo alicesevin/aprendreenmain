@@ -3,6 +3,7 @@ var TweenMax = require("gsap");
 module.exports = function () {
     (function () {
         document.addEventListener("DOMContentLoaded", function () {
+            mainAnime = Sine.easeOut;
             duration = 1.8;
 
             // landAnimations
@@ -10,17 +11,17 @@ module.exports = function () {
             landAnimation = {
                 opacity: 0,
                 bottom: "-10%",
-                ease: SlowMo.ease.config(0.1, 0.1, false)
+                ease: mainAnime
             };
 
             toLeft = {
-                x: "-180%",
-                ease: SlowMo.ease.config(0.1, 0.1, false)
+                x: "-190%",
+                ease: mainAnime
             };
 
             toRight = {
-                x: "300%",
-                ease: toLeft.ease
+                x: "280%",
+                ease: mainAnime
             }
 
             textAnimation = {
@@ -28,7 +29,7 @@ module.exports = function () {
             }
 
 
-            offset1 = '-=0.6'
+            offset1 = '-=1.2'
             offset2 = '-=2'
 
             // TImelines
@@ -36,20 +37,18 @@ module.exports = function () {
             var tl = new TimelineMax();
             tl.to('.plx-z-7.fond', duration, landAnimation)
                 .from('.plx-z-6.fond', duration, landAnimation, offset1)
-                .from('.plx-z-5.fond', duration, landAnimation)
-                .from('.plx-z-4.fond', duration, landAnimation)
-                .from('.plx-z-3.fond', duration, landAnimation, offset1)
-                .from('.plx-z-2.fond', duration, landAnimation, '-=1.8')
-                .from('.plx-z-1.fond', duration, landAnimation, '-=1.8')
+                .from('.plx-z-5.fond', duration - 0.5, landAnimation)
+                .from(['.plx-z-4.fond', '.plx-z-3.fond'], duration, landAnimation)
+                .from(['.plx-z-1.fond', '.plx-z-2.fond'], duration, landAnimation, 'end')
+            // .from(', duration, landAnimation, '-=1.8')
 
-            duration2 = 2.2;
-            
+            duration2 = 1.8;
+
             var tl2 = new TimelineMax();
             tl2.from(['.arbre1', '.animal'], duration2, toLeft)
-                .from('.arbre2', duration2, toRight, offset2)
-                .from('.arbre3', duration2, toLeft, "-=1")
-                .from('.arbre4', duration2, toRight, offset2)
-                .from('.arbre4', duration2, toRight, offset2)
+                .from('.arbre2', duration2, toRight)
+                .from('.arbre3', duration2, toLeft)
+                .from('.arbre4', duration2, toRight,"-=1.6")
                 .from('.plx-cartel', 0.3, textAnimation)
 
 
