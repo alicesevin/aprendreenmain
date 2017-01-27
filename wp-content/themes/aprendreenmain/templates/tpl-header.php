@@ -19,7 +19,8 @@
                                          alt="<?php echo get_bloginfo(); ?>"/>
                                 </a>
                             </h1>
-                            <button class="finance hidden-md hidden-lg btn"><a href="#">$</a></button>
+                            <button class="finance hidden-md hidden-lg btn"><a
+                                        href="<?php get_field('ulule', 'option'); ?>">$</a></button>
                         </div>
                         <div id="navbar" class="navbar-collapse collapse">
                             <?php $links_sections = get_posts(array(
@@ -57,7 +58,8 @@
                                     wp_reset_postdata(); ?>
                                 </ul>
                             <?php endif; ?>
-                            <button class="btn hidden-sm"><a href="#">Faire un don</a></button>
+                            <button class="btn hidden-sm"><a href="<?php get_field('ulule', 'option'); ?>">Faire un
+                                    don</a></button>
                         </div>
                     </div>
                 </nav>

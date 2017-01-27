@@ -8,8 +8,8 @@ module.exports = function () {
     $(document).ready(function () {
         var duration = 2000;
 // variable de la value du compteur
-        var count = ulule.total;
-        var toReach = ulule.require;
+        var count = 540;
+        var toReach = 1300;
         var percent = count / toReach * 75;
         var countTop = $('#animated').offset().top;
         var start = true;
