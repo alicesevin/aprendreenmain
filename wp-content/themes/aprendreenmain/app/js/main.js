@@ -11,3 +11,4 @@ cwd();
 // startAnimation();
 scrollAnimation();
 animationParallax();
+
