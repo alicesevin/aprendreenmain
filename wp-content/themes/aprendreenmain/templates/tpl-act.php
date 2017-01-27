@@ -26,3 +26,9 @@
     <button class="red-btn"><a href="<?php echo site_url('/actualites/') ?>">Voir toutes les actualités</a>
     </button>
 </div>
+<div class="form form1 small">
+    <span class="duration">4000</span>
+    <span class="property">left</span>
+    <span class="from">20</span>
+    <span class="to">70</span>
+</div>

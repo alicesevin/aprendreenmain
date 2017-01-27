@@ -3,7 +3,7 @@ var TweenMax = require("gsap");
 module.exports = function () {
     (function () {
         document.addEventListener("DOMContentLoaded", function () {
-            duration = 1.8;
+            /*duration = 1.8;
 
             // landAnimations
 
@@ -43,7 +43,7 @@ module.exports = function () {
                 .from('.plx-z-1.fond', duration, landAnimation, '-=1.8')
 
             duration2 = 2.2;
-            
+
             var tl2 = new TimelineMax();
             tl2.from(['.arbre1', '.animal'], duration2, toLeft)
                 .from('.arbre2', duration2, toRight, offset2)
@@ -52,7 +52,7 @@ module.exports = function () {
                 .from('.arbre4', duration2, toRight, offset2)
                 .from('.plx-cartel', 0.3, textAnimation)
 
-
+*/
         });
     })();
 };

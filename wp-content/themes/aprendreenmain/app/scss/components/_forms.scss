@@ -1,0 +1,67 @@
+.tpl {
+  .form {
+    span {
+      display: none;
+    }
+    position: absolute;
+    z-index: 0;
+    opacity: 1;
+    &1 {
+      width: 200px;
+      height: 100px;
+      left: 110%;
+      top: 30%;
+      background: $corpo1;
+      &.medium {
+        width: 125px;
+        height: 320px;
+        left: 37%;
+        top: 15%;
+        background: $corpo1;
+      }
+      &.small {
+        height: 40px;
+      }
+      &.xsmall {
+        width: 30px;
+        height: 160px;
+        left: 48%;
+      }
+    }
+    &2 {
+      width: 35px;
+      height: 550px;
+      left: 20%;
+      top: 0%;
+      z-index: 0;
+      background: $corpo2;
+      &.big {
+        left: 75%;
+        width: 200px;
+        height: 160px;
+      }
+      &.xsmall {
+        width: 170px;
+        height: 100px;
+        left: 10%;
+      }
+    }
+    &3 {
+      width: 185px;
+      height: 620px;
+      left: 57%;
+      top: 0;
+      background: $corpo3;
+      &.medium {
+        width: 160px;
+        height: 125px;
+        top: 65%;
+      }
+      &.xsmall {
+        width: 120px;
+        height: 60px;
+        top: 65%;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 <div class="col-md-offset-1 col-md-10 col-sm-12">
+    <div class="list__tpl-tabs">
     <?php $tabs = get_field('tabs');
     if ($tabs && count($tabs) > 0):?>
         <div class="tabs-nav">
@@ -23,4 +24,14 @@
             <?php endforeach; ?>
         </div>
     <?php endif; ?>
+    </div>
+    <div class="list__tpl-tabs-resume">
+
+    </div>
+</div>
+<div class="form form3 medium">
+    <span class="duration">10000</span>
+    <span class="property">left</span>
+    <span class="from">10</span>
+    <span class="to">20</span>
 </div>

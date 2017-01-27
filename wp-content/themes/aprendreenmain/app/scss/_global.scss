@@ -16,14 +16,19 @@ section {
     bottom: 65px;
   }
   overflow: hidden;
+  @media screen and (max-width: $sm-max) {
+    overflow: auto;
+  }
 }
 .main {
   background: $fond;
   section {
     background: none;
   }
-  &.sticky-header{
-    padding-top: 65px;
+  &.home{
+    position: relative;
+    padding-top: 205px;
+    overflow-x: hidden;
   }
 }
 ul{

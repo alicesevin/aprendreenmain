@@ -41,6 +41,9 @@
 
 .list-item {
   padding: 25px 30px;
+  @media screen and (max-width: $sm-max) {
+    text-align: left;
+  }
   &__tpl-act {
     background: $xxLight;
     height: 330px;
@@ -77,6 +80,25 @@
         color: $corpo1;
       }
 
+    }
+    @media screen and (max-width: $sm-max) {
+      height: auto;
+      text-align: left;
+      .link-item{
+        position: static;
+        margin: {
+          top: 25px;
+          left: auto;
+          right: auto;
+        }
+        text-align: center;
+        display: block;
+        width: 100%;
+        transform: translate(0);
+      }
+      p{
+        max-height: 100px;
+      }
     }
     li:nth-child(3n+2) & {
       &:before {
@@ -116,6 +138,9 @@
     background: $xxLight;
     &:first-child {
       margin-top: 0;
+      @media screen and (max-width: $sm-max) {
+        @include rem(margin-top, 50px);
+      }
     }
     strong {
       display: block;
@@ -129,7 +154,17 @@
     }
   }
 }
-
+.list__tpl-tabs{
+  @media screen and (max-width: $sm-max) {
+    display: none;
+  }
+  &-resume{
+    display: none;
+    @media screen and (max-width: $sm-max) {
+      display: block;
+    }
+  }
+}
 .tab-list {
   text-align: center;
 }

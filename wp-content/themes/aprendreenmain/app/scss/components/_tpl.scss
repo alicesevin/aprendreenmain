@@ -1,17 +1,8 @@
 //Templates
 .tpl {
+  position: relative;
   div {
     z-index: 2;
-    &.form {
-      width: 200px;
-      height: 100px;
-      background: $corpo1;
-      position: absolute;
-      left: 105%;
-      top: 30%;
-      z-index: 0;
-      opacity: 1;
-    }
   }
   h1 {
     @include rem(line-height, 33px);
@@ -24,8 +15,16 @@
       background: $corpo1;
     }
     margin-bottom: 50px;
+    @media screen and (max-width: $sm-max) {
+      text-align: center;
+      &:after {
+        margin: 25px auto 0;
+      }
+    }
   }
-
+  @media screen and (max-width: $sm-max) {
+    text-align: center;
+  }
   &-cdwd {
     h1 {
       @include rem(font-size, 30px);
@@ -62,27 +61,47 @@
     &__list {
       text-align: center;
     }
+    .list-item__tpl-prt {
+      margin: 15px auto;
+    }
     img {
       max-height: 45px;
       max-width: 60%;
       width: auto;
       height: auto;
     }
+    @media screen and (max-width: $xs-max) {
+      .form3 {
+        display: none;
+      }
+      .list-item__tpl-prt {
+        margin: 45px auto;
+      }
+    }
   }
 }
+
 // CWD
-.svg-container{
-  width: 500px;
-  height: 500px;
-  text-align:center;
+.svg-container {
+  text-align: center;
+  position: relative;
   margin: 0 auto;
-}
-
-#count{
-  font-size:25px;
-}
-
-svg{
-  transform: rotate(235deg);
-  width: 200px;
+  svg {
+    transform: rotate(235deg);
+    width: 80%;
+    path:first-child {
+      stroke: #3b3b3b;
+    }
+    #progress {
+      stroke: $corpo1;
+    }
+  }
+  #count {
+    position: absolute;
+    color: $corpo1;
+    left: 50%;
+    @include rem(font-size, 60px);
+    transform: translate(-50%, -50%);
+    top: 50%
+  }
 }

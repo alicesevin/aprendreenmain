@@ -7,7 +7,7 @@ var cwd = require('./components/cwd');
 
 // Initialisation des globaux
 appGlobal();
-startAnimation();
-// scrollAnimation();
-animationParallax();
 cwd();
+startAnimation();
+scrollAnimation();
+animationParallax();
