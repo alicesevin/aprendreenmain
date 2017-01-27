@@ -1,6 +1,6 @@
 var TweenMax = require("gsap");
 module.exports = function () {
-  (function(){
+    (function () {
     document.addEventListener("DOMContentLoaded", function(){
       // select last background
       var fond1 = document.querySelector('.plx-z-1.fond');
@@ -14,7 +14,7 @@ module.exports = function () {
         var result = Math.random() * (max - min) + min;
         return Math.ceil(result);
       }
-      
+
       // move background
       setInterval(function(){
 

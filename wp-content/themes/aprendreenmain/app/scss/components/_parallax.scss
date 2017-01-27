@@ -1,6 +1,7 @@
 //Section
 .plx {
   height: 100vh;
+  width: 100% !important;
 }
 
 .plx-section {
@@ -12,14 +13,18 @@
 
 //Profondeur & Couleur
 .section1 {
-  @include css-gradient($from: #db8d4b, $to: #fcd7a6);
+  background-color: #{nth(nth($section1-color,2),1)};
+  box-shadow: 0 180px 100px -100px #{nth(nth($section1-color,1),1)} inset;
+  transition: all 1s;
   @include plx-colors($section1-color);
 }
 
 .section2 {
+  background-color: #{nth(nth($section2-color,2),1)};
+  box-shadow: 0 200px 100px -100px #{nth(nth($section2-color,1),1)} inset;
+  transition: all 1s;
   @include plx-colors($section2-color);
 }
-
 //Elements
 
 $actualLeft: 0;
@@ -37,10 +42,10 @@ $actualLeft: 0;
       &.plx-x-#{$i} {
         left: percentage($i/100);
         &:not(.fond) {
-          /*&.start {
+          &.start {
             left: $left;
             transform: translateX($left);
-          }*/
+          }
         }
         @media screen and (max-width: $sm-max) {
           @if $i <0 {
@@ -121,6 +126,10 @@ $actualLeft: 0;
 path.nuagecustom {
   fill: #c98146;
 }
+path.nuage{
+  fill : #98B458;
+  transition: all, 3s, ease;
+}
 
 img.puit {
   height: 20%;
@@ -158,6 +167,16 @@ img.pieces, img.pieces2 {
 }
 
 .maison {
+  opacity: 0;
+}
+
+.scrollmagic-pin-spacer {
+  z-index: 80000;
+  background: #fff;
+}
+.plx-cartel{
+  text-align : center;
+  max-width: 300px;
   opacity: 0;
 }
 

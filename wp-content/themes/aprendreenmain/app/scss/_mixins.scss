@@ -103,7 +103,7 @@ $indexes: (
       }
       &.animal,
       &.arbre {
-        /*transition: left #{$time}s ease-in-out 1s;*/
+        transition: left #{$time}s ease-in-out 1s, fill 2s;
         bottom: percentage((($index*nth($list, 4))-17)/100);
         transform: translateY(percentage((($index*nth($list, 4))-17)/100));
         @media screen and (max-width: $md-max) {
@@ -137,15 +137,15 @@ $indexes: (
           width: 200%;
         }
         max-width: none;
-        /*transition: all #{$time}s;*/
+        transition: all #{$time}s ease-in-out, fill 2s;
         opacity: 1;
-        // &.start {
-        //   @if ($index>=3) {
-        //     bottom: -100%;
-        //   } @else {
-        //     opacity: 0;
-        //   }
-        // }
+        &.start {
+        @if ($index>=3) {
+        bottom: -100%;
+        } @else {
+        opacity: 0;
+         }
+        }
       }
     }
   }

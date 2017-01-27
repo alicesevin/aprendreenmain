@@ -1,5 +1,6 @@
 <h1><?php echo get_the_title(); ?></h1>
 <div class="col-md-offset-1 col-md-10 col-sm-12">
+    <div class="trigger-team"></div>
     <?php $args = array(
         'post_type' => 'portrait',
         'post_per_page' => -1,
@@ -14,27 +15,45 @@
     $prenom = get_field('prenom');
     $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'large')[0];
     if ($j == 1): ?>
-    <div class="tpl-eqp__list bck-list col-sm-4">
+    <ul class="tpl-eqp__list bck-list col-sm-12 col-md-4">
         <?php endif; ?>
-        <article class="list-item list-item__tpl-eqp">
-            <?php if ($img) : ?>
-                <div class="round">
-                    <img src="<?php echo $img ?>" alt="<?php echo $prenom . ' ' . $nom ?>">
-                </div>
-            <?php endif; ?>
-            <strong>
-                <?php echo $prenom ?>
-                <span><?php echo $nom ?></span>
-            </strong>
-            <?php the_content(); ?>
-        </article>
+        <li class="list-item list-item__tpl-eqp col-md-12 col-sm-6">
+            <div class="item-container">
+                <?php if ($img) : ?>
+                    <div class="round">
+                        <img src="<?php echo $img ?>" alt="<?php echo $prenom . ' ' . $nom ?>">
+                    </div>
+                <?php endif; ?>
+                <strong>
+                    <?php echo $prenom ?>
+                    <span><?php echo $nom ?></span>
+                </strong>
+                <?php the_content(); ?>
+            </div>
+        </li>
         <?php if ($j % 3 == 0): ?>
-    </div>
-    <div class="tpl-eqp__list bck-list list <?php echo ($j % 3 == 0 && !($j % 2 == 0)) ? ' decale' : (($j % 6 == 0) ? 'decale-small' : '') ?> col-sm-4">
+    </ul>
+    <ul class="tpl-eqp__list bck-list list <?php echo ($j % 3 == 0 && !($j % 2 == 0)) ? ' decale' : (($j % 6 == 0) ? 'decale-small' : '') ?> col-sm-12 col-md-4">
         <?php endif;
         $j++;
-        endwhile;
-        endif;
+        endwhile; endif;
         wp_reset_postdata(); ?>
-    </div>
+</div>
+<div class="form form2 ">
+    <span class="duration">6000</span>
+    <span class="property">top</span>
+    <span class="from">20</span>
+    <span class="to">50</span>
+</div>
+<div class="form form1 medium ">
+    <span class="duration">8000</span>
+    <span class="property">left</span>
+    <span class="from">40</span>
+    <span class="to">60</span>
+</div>
+<div class="form form3 ">
+    <span class="duration">4000</span>
+    <span class="property">top</span>
+    <span class="from">80</span>
+    <span class="to">10</span>
 </div>

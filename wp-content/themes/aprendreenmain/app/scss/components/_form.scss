@@ -1,10 +1,11 @@
-label{
+label {
   color: $light;
   font-weight: $semibold;
   width: 100%;
 }
+
 input:not([type="submit"]),
-textarea{
+textarea {
   @include rem(font-size, 14px);
   border: 2px solid $xLight;
   margin: 5px 0;
@@ -15,4 +16,14 @@ textarea{
   font-weight: $regular;
   outline-color: $light;
   width: 100%;
+}
+input[type="submit"]{
+  @media screen and(max-width: $sm-max) {
+    margin: 5px auto;
+  }
+}
+form{
+  @media screen and(max-width: $sm-max) {
+    text-align: left;
+  }
 }

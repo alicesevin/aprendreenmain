@@ -7,4 +7,5 @@ wp-content/uploads/
 node_modules/
 *.map
 wp-content/themes/aprendreenmain/dist/js/*
+wp-content/themes/aprendreenmain/dist/css/*
 *.sql

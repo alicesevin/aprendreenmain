@@ -14,3 +14,21 @@
         wp_reset_postdata(); ?>
     </ul>
 </div>
+<div class="form form2 xsmall">
+    <span class="duration">4000</span>
+    <span class="property">top</span>
+    <span class="from">40</span>
+    <span class="to">70</span>
+</div>
+<div class="form form1 xsmall">
+    <span class="duration">6000</span>
+    <span class="property">top</span>
+    <span class="from">55</span>
+    <span class="to">10</span>
+</div>
+<div class="form form3 xsmall">
+    <span class="duration">8000</span>
+    <span class="property">left</span>
+    <span class="from">70</span>
+    <span class="to">75</span>
+</div>
