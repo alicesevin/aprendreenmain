@@ -25,7 +25,7 @@ if (count($parallaxs) > 0):?>
             );
             $elements = new WP_Query($args);
             if ($elements->have_posts()) :?>
-                <div id="<?php echo $parallax ?>" class="plx-section<?php echo ' ' . $parallax ?>">
+                <div id="<?php echo $parallax ?>" class="plx-section section-1">
                     <?php while ($elements->have_posts()) : $elements->the_post();
                         $isSvg = get_field('declare_svg');
                         $element = get_field('element');
