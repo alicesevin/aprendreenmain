@@ -25,7 +25,7 @@
   @media screen and (max-width: $sm-max) {
     text-align: center;
   }
-  &-cdwd {
+  &-cwd {
     h1 {
       @include rem(font-size, 30px);
       &:after {
@@ -89,6 +89,7 @@
   svg {
     transform: rotate(235deg);
     width: 80%;
+    max-width: 280px;
     path:first-child {
       stroke: #3b3b3b;
     }

@@ -7,7 +7,8 @@ module.exports = function () {
         document.addEventListener("DOMContentLoaded", function () {
             var $start = $('.start'),
                 $header = $('.header'),
-                $main = $('.main');
+                $main = $('.main'),
+                $navBar = $('#navbar');
             setTimeout(function () {
                 $start.each(function () {
                     $(this).removeClass('start');
@@ -28,6 +29,24 @@ module.exports = function () {
                     $main.removeClass('sticky-header');
                 }
 
+            });
+
+            $('.navbar-toggle').on('click', function () {
+                if ($navBar.hasClass('collapse')) {
+                    $navBar.removeClass('collapse');
+                } else {
+                    $navBar.addClass('collapse');
+                }
+            });
+
+            $('.tpl-tabs').on('click', '.tabs>a', function (e) {
+                e.preventDefault();
+                if (!$(this).hasClass('active')) {
+                    $('.tabs>a').removeClass('active');
+                    $(this).addClass('active');
+                    $('.tabs-item').hide();
+                    $($(this).attr('href')).show();
+                }
             });
 
         })

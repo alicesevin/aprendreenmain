@@ -9,7 +9,7 @@
   &.sticky{
     position: fixed;
   }
-  .container {
+  .navbar-wrapper {
     padding: {
       top: 10px;
       bottom: 10px;
@@ -17,18 +17,70 @@
   }
   #logo {
     margin: 0;
+    padding: 10px 0 0;
     img {
       width: 50px;
     }
   }
+  .navbar-toggle {
+    &:hover,
+    &:active,
+    &:focus{
+      background: none;
+    }
+    .icon-bar {
+      background: $light;
+      width: 30px;
+      height: 3px;
+      margin-bottom: 7px;
+    }
+  }
   #navbar{
     text-align: right;
+    @media screen and (max-width: $sm-max) {
+      width: 90%;
+      position: absolute;
+    }
+    @media screen and (max-width: $xs-max) {
+      width: 100%;
+      position: static;
+    }
   }
+  .navbar{
+    margin-bottom: 0;
+    @media screen and (max-width: $sm-max) {
+        width: 100%;
+    }
+  }
+  #main-nav{
+    @media screen and (max-width: $sm-max) {
+      .finance {
+        margin-right: 3%;
+          padding: 0;
+        a {
+          padding: 5px 17px;
+          @include rem(font-size, 20px);
+        }
+      }
+    }
+  }
+  .navbar-header{
+    @media screen and (max-width: $sm-max) {
+      width: 100%;
+    }
+  }
+  .navbar-wrapper>.container{
+    @media screen and (max-width: $xs-max) {
+      padding: 0;
+    }
+  }
+
   #main-nav {
     float: right;
     .tab-list {
       display: inline-block;
       margin: 0;
+      float:none;
     }
     .tabs{
       padding: 0 15px;
@@ -37,6 +89,51 @@
     button {
       float: right;
       margin: 0;
+    }
+    @media screen and (max-width: $xs-max) {
+      float: none;
+      text-align: center;
+      .navbar-toggle{
+        float: left;
+        margin-left: 3%;
+      }
+      #logo{
+        float: none;
+        display: inline-block;
+      }
+      #navbar{
+        text-align: center;
+        background: $corpo1;
+        padding-bottom: 30px;
+      }
+      .finance{
+        margin-right: 3%;
+        a{
+          padding: 5px 17px;
+        }
+      }
+      .tab-list{
+        a{
+          color:$xxLight;
+          text-transform : uppercase;
+          font-weight: $bold;
+          @include rem(font-size, 20px);
+          padding: 10px 40px;
+          margin: 20px auto;
+          &:hover,
+          &:active,
+          &:focus{
+            background: $corpo1;
+          }
+        }
+        display: block;
+        margin-bottom: 30px;
+        &+button{
+          float: none;
+          background: none;
+          border-color: $xxLight;
+        }
+      }
     }
   }
 }

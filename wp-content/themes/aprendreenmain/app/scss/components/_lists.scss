@@ -84,7 +84,7 @@
     @media screen and (max-width: $sm-max) {
       height: auto;
       text-align: left;
-      .link-item{
+      .link-item {
         position: static;
         margin: {
           top: 25px;
@@ -96,7 +96,7 @@
         width: 100%;
         transform: translate(0);
       }
-      p{
+      p {
         max-height: 100px;
       }
     }
@@ -133,13 +133,32 @@
     }
   }
   &__tpl-eqp {
-    @include rem(margin, 50px 10px 0 10px);
-    min-height: 365px;
-    background: $xxLight;
-    &:first-child {
-      margin-top: 0;
+    padding: 0;
+    .bck-list & {
+      box-shadow: none;
+    }
+    .item-container {
+      margin: 50px 10px 0 10px;
+      min-height: 365px;
+      background: $xxLight;
+      padding: 40px;
+      box-shadow: 0.7px 0.7px 3px 0 rgba(1, 2, 2, 0.2);
       @media screen and (max-width: $sm-max) {
-        @include rem(margin-top, 50px);
+        margin-top: 30px;
+      }
+      @media screen and (max-width: $xs-max) {
+        margin-top: 20px;
+      }
+    }
+    &:first-child {
+      .item-container {
+        margin-top: 0;
+        @media screen and (max-width: $sm-max) {
+          margin-top: 120px;
+        }
+        @media screen and (max-width: $xs-max) {
+          margin-top: 20px;
+        }
       }
     }
     strong {
@@ -154,17 +173,7 @@
     }
   }
 }
-.list__tpl-tabs{
-  @media screen and (max-width: $sm-max) {
-    display: none;
-  }
-  &-resume{
-    display: none;
-    @media screen and (max-width: $sm-max) {
-      display: block;
-    }
-  }
-}
+
 .tab-list {
   text-align: center;
 }
@@ -174,7 +183,7 @@
   cursor: pointer;
   padding: 15px;
   margin: 15px;
-  a{
+  a {
     text-decoration: none;
     color: $light;
     &.active,
@@ -186,8 +195,24 @@
   }
 }
 
+.tpl-tabs {
+  @media screen and (max-width: $sm-max) {
+
+    .tabs {
+      display: block;
+      padding: 5px 15px;
+      margin: 5px 15px;
+    }
+    .tab-list {
+        margin-bottom: 30px;
+    }
+  }
+
+}
+
 .tabs-item {
   display: none;
+  min-height: 400px;
   &:first-child {
     display: block;
   }

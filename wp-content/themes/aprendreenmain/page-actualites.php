@@ -6,6 +6,7 @@ the_post();
         <div class="container">
             <section class="tpl tpl-act">
                 <div class="container">
+                    <h1><?php echo get_the_title(); ?></h1>
                     <div class="row">
                         <div class="col-md-offset-1 col-md-10 col-sm-offset-0 col-sm-12">
                             <?php
@@ -18,7 +19,7 @@ the_post();
                             if ($actus->have_posts()): ?>
                             <ul class="tpl-act__list bck-list">
                                 <?php while ($actus->have_posts()): $actus->the_post(); ?>
-                                    <li class="col-md-4 col-sm-12">
+                                    <li class="col-lg-4 col-md-6 col-sm-12">
                                         <div class="list-item__tpl-act">
                                             <strong><?php echo get_the_title(); ?></strong>
                                             <p><?php echo get_the_excerpt(); ?></p>

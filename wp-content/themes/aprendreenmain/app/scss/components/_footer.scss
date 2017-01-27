@@ -1,0 +1,77 @@
+.footer {
+  position: relative;
+  background: $fond url('../img/footer.png') top center no-repeat;
+  background-size: cover;
+  overflow-x: hidden;
+  padding: {
+    top: 21%;
+    bottom: 23%;
+  }
+  @media screen and (max-width: $sm-max) {
+    background-size: 110%;
+    background-position: bottom center;
+    padding-bottom: 30%;
+  }
+  @media screen and (max-width: $xs-max) {
+    background-size: 200%;
+  }
+  > .container {
+    width: 100%;
+    overflow: hidden;
+  }
+  > .container > .row {
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+  }
+  a {
+    color: $xxLight;
+    &:hover,
+    &:active,
+    &:focus {
+      color: $xxLight;
+    }
+  }
+  .sociaux {
+    a {
+      color: $xxLight;
+      &:hover,
+      &:active,
+      &:focus {
+        color: $xxLight;
+      }
+    }
+  }
+  li {
+    list-style: none;
+  }
+  .footer-nav li {
+    display: inline-block;
+  }
+  .copyright {
+    text-align: center;
+    color: $xxLight;
+    padding-bottom: 30px;
+  }
+  form {
+    width: 90%;
+    label {
+      color: $xxLight;
+      margin: 0;
+      width: 70%;
+      vertical-align: bottom;
+    }
+    input {
+      border-color: $xxLight;
+      margin: 0;
+      display: inline-block;
+      border-radius: 0;
+      vertical-align: bottom;
+      &[type="submit"] {
+        border-color: $xxLight;
+        color: $xxLight;
+      }
+    }
+  }
+}
