@@ -16,11 +16,13 @@
     }
   }
   #logo {
-    float: left;
     margin: 0;
     img {
       width: 50px;
     }
+  }
+  #navbar{
+    text-align: right;
   }
   #main-nav {
     float: right;
@@ -33,7 +35,7 @@
       margin: 0 15px;
     }
     button {
-      display: inline-block;
+      float: right;
       margin: 0;
     }
   }
